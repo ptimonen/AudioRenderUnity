@@ -343,7 +343,7 @@ public class WireframeRenderer : MonoBehaviour
                     tA = tNear;
                 }
             }
-            else if (pA.z < -pB.w)
+            else if (pA.z < -pA.w)
             {
                 // Ray does not intersect with near and far circle, AND does not lay between the circles because it hits the cylinder behind the near plane, cull.
                 return false;
