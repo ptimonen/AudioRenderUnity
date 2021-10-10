@@ -2,6 +2,14 @@ using UnityEngine;
 
 public class AutomaticWireframeObjects : MonoBehaviour
 {
+    [Header("Gathers all mesh filters from children and makes them wireframe objects.")]
+
+    [Header("Edges with angle below this threshold will not be rendered.")]
+    [SerializeField] float edgeAngleLimit;
+
+    [Header("Should we override existing wireframe objects from children?")]
+    [SerializeField] bool overrideExistingObjects;
+
     void Start()
     {
         if (WireframeRenderer.Instance)
@@ -9,9 +17,15 @@ public class AutomaticWireframeObjects : MonoBehaviour
             MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>(false);
             foreach (MeshFilter meshFilter in meshFilters)
             {
-                if (!meshFilter.gameObject.GetComponent<WireframeObject>())
+                WireframeObject wireFrameObject = meshFilter.gameObject.GetComponent<WireframeObject>();
+                if (!wireFrameObject)
                 {
-                    meshFilter.gameObject.AddComponent<WireframeObject>();
+                    wireFrameObject = meshFilter.gameObject.AddComponent<WireframeObject>();
+                    wireFrameObject.UpdateProperties(edgeAngleLimit);
+                }
+                else if (overrideExistingObjects)
+                {
+                    wireFrameObject.UpdateProperties(edgeAngleLimit);
                 }
             }
         }

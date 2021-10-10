@@ -5,8 +5,7 @@ public class TestRenderer : MonoBehaviour
 {
     private void Start()
     {
-        // TODO: This won't work in standalone builds.
-        renderDevice = new ScreenRenderDevice("Assets/Resources/ScopeBackground.jpg", true, true);
+        renderDevice = new AudioRender.ScreenRenderDevice(Application.streamingAssetsPath + "/ScopeBackground.jpg", true, true);
     }
 
     private void OnDestroy()

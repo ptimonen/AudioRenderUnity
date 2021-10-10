@@ -224,8 +224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2861ae79aae9140b7db69a0cdb5a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useEmulator: 1
   renderCamera: {fileID: 675085829}
-  drawQuads: 0
+  intensity: 0.35
+  randomOffset: 0.1
+  useLineToTriangleClipping: 0
+  logVerbose: 0
 --- !u!1001 &5161361267439828252
 PrefabInstance:
   m_ObjectHideFlags: 0
