@@ -24,6 +24,10 @@ public class WireframeRenderer : MonoBehaviour
     [SerializeField] private bool useEmulator = false;
     [Header("Camera to render lines from. Use square aspect ratio.")]
     [SerializeField] private Camera renderCamera;
+    [Header("X scale of the rendering. (no effect in emulator)")]
+    [SerializeField] private float scaleX = -2.0f;
+    [Header("Y scale of the rendering. (no effect in emulator)")]
+    [SerializeField] private float scaleY = -2.0f;
     [Header("Intensity (in other words brightness or width) of the lines.")]
     [SerializeField] private float intensity = 0.35f;
     [Header("Random distance added to each line.")]
@@ -620,15 +624,38 @@ public class WireframeRenderer : MonoBehaviour
         var args = System.Environment.GetCommandLineArgs();
         for (int i = 0; i < args.Length; i++)
         {
+            Debug.Log("ARG" + i + ": " + args[i]);
             if (args[i] == "-screenRender")
             {
                 useEmulator = true;
-                break;
+                Debug.Log("Use screen render");
             }
             if (args[i] == "-audioRender")
             {
                 useEmulator = false;
-                break;
+                Debug.Log("Use audio render");
+            }
+            if (args[i] == "-scaleX")
+            {
+                if (args.Length > i)
+                {
+                    if (float.TryParse(args[i + 1], out float result))
+                    {
+                        scaleX = result;
+                        Debug.Log("Use scale x: " + scaleX);
+                    }
+                }
+            }
+            if (args[i] == "-scaleY")
+            {
+                if (args.Length > i)
+                {
+                    if (float.TryParse(args[i + 1], out float result))
+                    {
+                        scaleY = result;
+                        Debug.Log("Use scale y: " + scaleY);
+                    }
+                }
             }
         }
 
@@ -641,7 +668,7 @@ public class WireframeRenderer : MonoBehaviour
         else
         {
             Debug.Log("Initializing AudioRenderDevice");
-            renderDevice = new AudioRender.AudioRenderDevice(new Vector2(-2.0f, -2.0f));
+            renderDevice = new AudioRender.AudioRenderDevice(new Vector2(scaleX, scaleY));
             Debug.Log("AudioRenderDevice initialized");
         }
 
