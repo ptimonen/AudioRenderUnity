@@ -6,21 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestSceneCube.unity
+    path: Assets/Plugins/AudioRender/Examples/Scenes/TestSceneCube.unity
     guid: 6e18ab6f2dde76c4fbf5fbdbda7d1f3a
   - enabled: 1
-    path: Assets/Scenes/TestSceneTriangles.unity
+    path: Assets/Plugins/AudioRender/Examples/Scenes/TestSceneTriangles.unity
     guid: d8451c7df06576b4f95646b2806d7a02
   - enabled: 1
-    path: Assets/Scenes/TestSceneSkinned.unity
+    path: Assets/Plugins/AudioRender/Examples/Scenes/TestSceneSkinned.unity
     guid: f308078a7b96d59479a045754903664d
   - enabled: 1
-    path: Assets/Scenes/TestSceneEffect.unity
+    path: Assets/Plugins/AudioRender/Examples/Scenes/TestSceneEffect.unity
     guid: 58c4168c61c50424fb0aecd23a316e54
   - enabled: 1
-    path: Assets/Scenes/TestSceneClipping.unity
+    path: Assets/Plugins/AudioRender/Examples/Scenes/TestSceneClipping.unity
     guid: 8f37df48532b6fa44862a4f890c2bc2d
   - enabled: 1
-    path: Assets/Scenes/TestSceneRenderDevice.unity
+    path: Assets/Plugins/AudioRender/Examples/Scenes/TestSceneRenderDevice.unity
     guid: 01104afbca0eb874182848d59c696661
   m_configObjects: {}

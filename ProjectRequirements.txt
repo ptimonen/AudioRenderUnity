@@ -1,7 +1,0 @@
-Static Batching: Off
-Dynamic Batching: Off
-Scripting Backend: IL2CPP
-Api Compatibility Level: .NET 4.x
-Packages: Burst, Collections, Mathematics
-Set PC audio to Windows Default Audio Device
-Set oscilloscope audio to Window Default Communications Device	
